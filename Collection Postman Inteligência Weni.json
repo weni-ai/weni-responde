@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "0786d360-ee8e-4ea0-87a0-0e72836297e4",
+		"name": "Inteligência Weni",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11997876"
+	},
+	"item": [
+		{
+			"name": "Autenticação para consumir API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"email\",\r\n    \"password\": \"senha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.bothub.it/v2/account/login/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bothub",
+						"it"
+					],
+					"path": [
+						"v2",
+						"account",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listando Frases",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c7fe92ac5dc94e790822ee75f83e15a136e5933e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.bothub.it/v2/repository/examples/?repository_uuid=b51e76b8-e5f9-49c5-89bb-c7f9630a62e6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bothub",
+						"it"
+					],
+					"path": [
+						"v2",
+						"repository",
+						"examples",
+						""
+					],
+					"query": [
+						{
+							"key": "repository_uuid",
+							"value": "b51e76b8-e5f9-49c5-89bb-c7f9630a62e6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listando Intenções Existentes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {seu token}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.bothub.it/v2/repository/intent/?repository_version={id da versão}&repository_version__repository={uuid da ia}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bothub",
+						"it"
+					],
+					"path": [
+						"v2",
+						"repository",
+						"intent",
+						""
+					],
+					"query": [
+						{
+							"key": "repository_version",
+							"value": "{id da versão}"
+						},
+						{
+							"key": "repository_version__repository",
+							"value": "{uuid da ia}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exclui uma Intenção",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {seu token}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.bothub.it/v2/repository/intent/{id da intenção}/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bothub",
+						"it"
+					],
+					"path": [
+						"v2",
+						"repository",
+						"intent",
+						"{id da intenção}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exclui uma Entidade",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {seu token}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.bothub.it/v2/repository/entity/{id da entidade}/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bothub",
+						"it"
+					],
+					"path": [
+						"v2",
+						"repository",
+						"entity",
+						"{id da entidade}",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
