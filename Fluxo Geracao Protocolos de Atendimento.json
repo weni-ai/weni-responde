@@ -1,0 +1,100 @@
+{
+  "version": "13",
+  "site": "https://flows.weni.ai",
+  "flows": [
+    {
+      "name": "Gera\u00e7\u00e3o de Protocolo",
+      "uuid": "4f8fbb8c-fde4-4aa0-9943-6dcf1b241483",
+      "spec_version": "13.1.0",
+      "language": "por",
+      "type": "messaging",
+      "nodes": [
+        {
+          "uuid": "4f9ed80c-efac-4125-a1df-7e2c9251f8d8",
+          "actions": [
+            {
+              "type": "set_run_result",
+              "name": "Protocolo",
+              "value": "@(replace(now(), \"-\", \"\"))",
+              "category": "",
+              "uuid": "c257f278-0b7b-48f6-91a0-245d65b1a699"
+            },
+            {
+              "type": "set_run_result",
+              "name": "Protocolo",
+              "value": "@(replace(results.protocolo, \":\", \"\"))",
+              "category": "",
+              "uuid": "55baefe7-d38c-4ce9-8199-9859a9d6e4df"
+            },
+            {
+              "type": "set_run_result",
+              "name": "Protocolo",
+              "value": "@(replace(results.protocolo, \".\", \"\"))",
+              "category": "",
+              "uuid": "59a11339-17f0-47a9-99ba-9e1cc359df32"
+            },
+            {
+              "type": "set_run_result",
+              "name": "Protocolo",
+              "value": "@(replace(results.protocolo, \"T\", \"\"))",
+              "category": "",
+              "uuid": "f07b755a-721d-4017-b2f2-8670ce32398e"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "3ea694cb-7a59-42eb-80c7-de53a33472c4",
+              "destination_uuid": "a79a4de2-1b24-4453-adc2-0176a07f9895"
+            }
+          ]
+        },
+        {
+          "uuid": "a79a4de2-1b24-4453-adc2-0176a07f9895",
+          "actions": [
+            {
+              "attachments": [],
+              "text": "@results.protocolo",
+              "type": "send_msg",
+              "quick_replies": [],
+              "uuid": "e10863e7-b89b-4f5e-b19c-bc59b1f36761"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "5fd1a0c4-5393-4a32-8488-52f7eb42c3d5",
+              "destination_uuid": null
+            }
+          ]
+        }
+      ],
+      "_ui": {
+        "nodes": {
+          "a79a4de2-1b24-4453-adc2-0176a07f9895": {
+            "position": {
+              "left": 140,
+              "top": 420
+            },
+            "type": "execute_actions"
+          },
+          "4f9ed80c-efac-4125-a1df-7e2c9251f8d8": {
+            "position": {
+              "left": 140,
+              "top": 0
+            },
+            "type": "execute_actions"
+          }
+        }
+      },
+      "revision": 18,
+      "expire_after_minutes": 10080,
+      "metadata": {
+        "expires": 10080
+      },
+      "localization": {}
+    }
+  ],
+  "campaigns": [],
+  "triggers": [],
+  "fields": [],
+  "groups": []
+}
