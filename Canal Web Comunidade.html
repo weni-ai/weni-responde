@@ -1,0 +1,74 @@
+<html>
+<head>
+    <script src="https://storage.googleapis.com/push-webchat/wwc-latest.js"></script>
+	<!-- <script src="./widget-latest.js"></script> -->
+    <style>
+        .push-widget-container {
+            bottom: 80px;
+            margin-right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="webchat"/>
+    <script>
+        WebChat.default.init(
+            {
+                //Tamanho das imagens dentro da conversa
+                params: {
+                    storage: "local", //Isso vai fazer o webchat guardar o estado do chat e o histórico somente enquanto a aba do navegador estiver aberta.
+                    images: { //Necessário para mostrar imagens dentro do script
+                        dims: {
+                            width: 300,
+                            height: 200
+                        }
+                    },
+                },
+                selector: "#webchat",
+                //initPayload: "start",
+                channelUuid: 'UUID',
+                host: 'https://new.push.al',
+                socketUrl: "https://websocket.weni.ai",
+                title: "TESTES",
+                subtitle: "Weni Comunidade",
+                inputTextFieldHint: 'Digite sua mensagem...',
+
+                showFullScreenButton: true,
+				startFullScreen: false,
+				// embedded: true,
+
+                // profile image
+                // openLauncherImage: 'https://push.al/wp-content/uploads/2020/02/avatar4.png',
+                profileAvatar: 'https://push.al/wp-content/uploads/2020/02/avatar4.png',
+
+                // interface customization params
+                customizeWidget: {
+                    // titleColor: "#",
+                    // subtitleColor: "#",
+                    // inputFontColor: '#',
+                    // launcherHeight: "70px",
+                    // launcherWidth: "70px",
+                    // widgetHeight: "75%",
+                    // widgetWidth: "",
+                     headerBackgroundColor: "#0093ff",
+                     launcherColor: "#0093ff",
+                    // userMessageBubbleColor: "#323232",
+                    // chatBackgroundColor: "#F2F2F2",
+                    // botMessageBubbleColor: "#fcbb76",
+                    // botMessageTextColor: "#fff",
+                    // userMessageBubbleColor: "#fff",
+                    // userMessageTextColor: "#fcbb76",
+                    // quickRepliesFontColor: "#F18F03",
+                    // quickRepliesBorderColor: "#F18F03",
+                    // inputBackgroundColor: "#fcbb76",
+                    // inputPlaceholderColor: "#fff",
+                    //  quickRepliesBackgroundColor: "#",
+                    //  quickRepliesBorderWidth: "#"
+                }
+
+            }
+        )
+        // WebChat.open() //Ative para abrir automaticamente o script
+    </script>
+</body>
+</html>
